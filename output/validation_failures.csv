@@ -1,0 +1,10 @@
+rule_id,severity,entity,issue
+DQ-03,CRITICAL,ULTRACEMCO,Company missing from companies.xlsx
+DQ-03,CRITICAL,UNIONBANK,Company missing from companies.xlsx
+DQ-03,CRITICAL,UNITDSPR,Company missing from companies.xlsx
+DQ-03,CRITICAL,VBL,Company missing from companies.xlsx
+DQ-03,CRITICAL,VEDL,Company missing from companies.xlsx
+DQ-03,CRITICAL,WIPRO,Company missing from companies.xlsx
+DQ-03,CRITICAL,ZOMATO,Company missing from companies.xlsx
+DQ-03,CRITICAL,ZYDUSLIFE,Company missing from companies.xlsx
+DQ-06,WARNING,ADANIENSOL,Sales <= 0
