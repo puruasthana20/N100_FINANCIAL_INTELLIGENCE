@@ -14,37 +14,58 @@ CREATE TABLE profitandloss (
     company_id TEXT,
     year TEXT,
     sales REAL,
+    expenses REAL,
     operating_profit REAL,
+    opm_percentage REAL,
+    other_income REAL,
+    interest REAL,
+    depreciation REAL,
+    profit_before_tax REAL,
+    tax_percentage REAL,
     net_profit REAL,
+    eps REAL,
+    dividend_payout REAL,
 
-    PRIMARY KEY (company_id, year),
+    PRIMARY KEY(company_id, year),
 
-    FOREIGN KEY (company_id)
+    FOREIGN KEY(company_id)
     REFERENCES companies(company_id)
 );
 
 CREATE TABLE balancesheet (
     company_id TEXT,
     year TEXT,
-    total_assets REAL,
+
+    equity_capital REAL,
+    reserves REAL,
+    borrowings REAL,
+    other_liabilities REAL,
     total_liabilities REAL,
 
-    PRIMARY KEY (company_id, year),
+    fixed_assets REAL,
+    cwip REAL,
+    investments REAL,
+    other_asset REAL,
+    total_assets REAL,
 
-    FOREIGN KEY (company_id)
+    PRIMARY KEY(company_id, year),
+
+    FOREIGN KEY(company_id)
     REFERENCES companies(company_id)
 );
 
 CREATE TABLE cashflow (
     company_id TEXT,
     year TEXT,
-    operating_cashflow REAL,
-    investing_cashflow REAL,
-    financing_cashflow REAL,
 
-    PRIMARY KEY (company_id, year),
+    operating_activity REAL,
+    investing_activity REAL,
+    financing_activity REAL,
+    net_cash_flow REAL,
 
-    FOREIGN KEY (company_id)
+    PRIMARY KEY(company_id, year),
+
+    FOREIGN KEY(company_id)
     REFERENCES companies(company_id)
 );
 
