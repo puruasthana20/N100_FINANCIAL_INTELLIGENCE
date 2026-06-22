@@ -1,0 +1,25 @@
+Foreign Key Review
+
+Total FK Violations: 280
+
+Root Cause:
+The following companies are present in financial datasets but missing from companies.xlsx:
+
+- AGTL
+- ULTRACEMCO
+- UNIONBANK
+- UNITDSPR
+- VBL
+- VEDL
+- WIPRO
+- ZOMATO
+- ZYDUSLIFE
+
+Impact:
+280 FK violations generated across Profit & Loss and Cashflow tables.
+
+Resolution:
+Requires master company records to be added to companies.xlsx before production deployment.
+
+Classification:
+Source Data Issue
