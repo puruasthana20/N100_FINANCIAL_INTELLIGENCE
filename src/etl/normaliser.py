@@ -1,9 +1,6 @@
-import re
-
-
 def normalize_ticker(ticker):
     """
-    Convert ticker to uppercase and remove spaces.
+    Normalize company ticker.
     """
 
     if ticker is None:
@@ -12,45 +9,27 @@ def normalize_ticker(ticker):
     return str(ticker).strip().upper()
 
 
-def normalize_year(year_value):
+def normalize_year(year):
     """
-    Convert values like:
+    Convert:
     Mar-24 -> 2024-03
     Mar-23 -> 2023-03
     """
 
-    if year_value is None:
+    if year is None:
         return None
 
-    value = str(year_value).strip()
+    year = str(year).strip()
 
-    match = re.match(r"([A-Za-z]{3})-(\d{2})", value)
+    if year == "TTM":
+        return "TTM"
 
-    if match:
-        month, yy = match.groups()
+    if "Mar-" in year:
+        yy = year.split("-")[1]
 
-        year = int(yy)
-
-        if year <= 30:
-            year += 2000
+        if int(yy) <= 30:
+            return f"20{yy}-03"
         else:
-            year += 1900
+            return f"19{yy}-03"
 
-        month_map = {
-            "Jan":"01",
-            "Feb":"02",
-            "Mar":"03",
-            "Apr":"04",
-            "May":"05",
-            "Jun":"06",
-            "Jul":"07",
-            "Aug":"08",
-            "Sep":"09",
-            "Oct":"10",
-            "Nov":"11",
-            "Dec":"12"
-        }
-
-        return f"{year}-{month_map[month]}"
-
-    return value
+    return year

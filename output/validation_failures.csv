@@ -8,3 +8,102 @@ DQ-03,CRITICAL,WIPRO,Company missing from companies.xlsx
 DQ-03,CRITICAL,ZOMATO,Company missing from companies.xlsx
 DQ-03,CRITICAL,ZYDUSLIFE,Company missing from companies.xlsx
 DQ-06,WARNING,ADANIENSOL,Sales <= 0
+DQ-07,WARNING,TVSMOTOR,Missing website
+DQ-09,WARNING,ADANIENT,Invalid tax percentage
+DQ-09,WARNING,ADANIGREEN,Invalid tax percentage
+DQ-09,WARNING,ADANIGREEN,Invalid tax percentage
+DQ-09,WARNING,ADANIGREEN,Invalid tax percentage
+DQ-09,WARNING,ADANIPOWER,Invalid tax percentage
+DQ-09,WARNING,ADANIPOWER,Invalid tax percentage
+DQ-09,WARNING,ADANIPOWER,Invalid tax percentage
+DQ-09,WARNING,ADANIPOWER,Invalid tax percentage
+DQ-09,WARNING,AMBUJACEM,Invalid tax percentage
+DQ-09,WARNING,AXISBANK,Invalid tax percentage
+DQ-09,WARNING,BANKBARODA,Invalid tax percentage
+DQ-09,WARNING,BANKBARODA,Invalid tax percentage
+DQ-09,WARNING,BANKBARODA,Invalid tax percentage
+DQ-09,WARNING,BHARTIARTL,Invalid tax percentage
+DQ-09,WARNING,BHARTIARTL,Invalid tax percentage
+DQ-09,WARNING,BHEL,Invalid tax percentage
+DQ-09,WARNING,BHEL,Invalid tax percentage
+DQ-09,WARNING,BHEL,Invalid tax percentage
+DQ-09,WARNING,CANBK,Invalid tax percentage
+DQ-09,WARNING,CANBK,Invalid tax percentage
+DQ-09,WARNING,CANBK,Invalid tax percentage
+DQ-09,WARNING,DLF,Invalid tax percentage
+DQ-09,WARNING,DRREDDY,Invalid tax percentage
+DQ-09,WARNING,GODREJCP,Invalid tax percentage
+DQ-09,WARNING,GRASIM,Invalid tax percentage
+DQ-09,WARNING,HDFCLIFE,Invalid tax percentage
+DQ-09,WARNING,IOC,Invalid tax percentage
+DQ-09,WARNING,JINDALSTEL,Invalid tax percentage
+DQ-09,WARNING,JINDALSTEL,Invalid tax percentage
+DQ-09,WARNING,JINDALSTEL,Invalid tax percentage
+DQ-09,WARNING,JINDALSTEL,Invalid tax percentage
+DQ-09,WARNING,JINDALSTEL,Invalid tax percentage
+DQ-09,WARNING,JSWSTEEL,Invalid tax percentage
+DQ-09,WARNING,JSWSTEEL,Invalid tax percentage
+DQ-09,WARNING,LODHA,Invalid tax percentage
+DQ-09,WARNING,LODHA,Invalid tax percentage
+DQ-09,WARNING,MOTHERSON,Invalid tax percentage
+DQ-09,WARNING,NHPC,Invalid tax percentage
+DQ-09,WARNING,NHPC,Invalid tax percentage
+DQ-09,WARNING,NTPC,Invalid tax percentage
+DQ-09,WARNING,NTPC,Invalid tax percentage
+DQ-09,WARNING,PNB,Invalid tax percentage
+DQ-09,WARNING,PNB,Invalid tax percentage
+DQ-09,WARNING,PNB,Invalid tax percentage
+DQ-09,WARNING,POWERGRID,Invalid tax percentage
+DQ-09,WARNING,SBIN,Invalid tax percentage
+DQ-09,WARNING,SHREECEM,Invalid tax percentage
+DQ-09,WARNING,TATAMOTORS,Invalid tax percentage
+DQ-09,WARNING,TATAMOTORS,Invalid tax percentage
+DQ-09,WARNING,TATASTEEL,Invalid tax percentage
+DQ-09,WARNING,TRENT,Invalid tax percentage
+DQ-09,WARNING,ULTRACEMCO,Invalid tax percentage
+DQ-09,WARNING,UNIONBANK,Invalid tax percentage
+DQ-09,WARNING,UNIONBANK,Invalid tax percentage
+DQ-09,WARNING,UNIONBANK,Invalid tax percentage
+DQ-09,WARNING,UNIONBANK,Invalid tax percentage
+DQ-09,WARNING,UNIONBANK,Invalid tax percentage
+DQ-09,WARNING,VBL,Invalid tax percentage
+DQ-09,WARNING,VBL,Invalid tax percentage
+DQ-09,WARNING,VEDL,Invalid tax percentage
+DQ-09,WARNING,VEDL,Invalid tax percentage
+DQ-09,WARNING,VEDL,Invalid tax percentage
+DQ-09,WARNING,VEDL,Invalid tax percentage
+DQ-09,WARNING,ZOMATO,Invalid tax percentage
+DQ-09,WARNING,ZOMATO,Invalid tax percentage
+DQ-09,WARNING,INDIGO,Invalid tax percentage
+DQ-09,WARNING,INDIGO,Invalid tax percentage
+DQ-09,WARNING,INDIGO,Invalid tax percentage
+DQ-10,WARNING,AMBUJACEM,Dividend payout > 100
+DQ-10,WARNING,BHARTIARTL,Dividend payout > 100
+DQ-10,WARNING,BHARTIARTL,Dividend payout > 100
+DQ-10,WARNING,BHEL,Dividend payout > 100
+DQ-10,WARNING,BPCL,Dividend payout > 100
+DQ-10,WARNING,BPCL,Dividend payout > 100
+DQ-10,WARNING,BRITANNIA,Dividend payout > 100
+DQ-10,WARNING,COALINDIA,Dividend payout > 100
+DQ-10,WARNING,COALINDIA,Dividend payout > 100
+DQ-10,WARNING,COALINDIA,Dividend payout > 100
+DQ-10,WARNING,COALINDIA,Dividend payout > 100
+DQ-10,WARNING,DLF,Dividend payout > 100
+DQ-10,WARNING,HINDUNILVR,Dividend payout > 100
+DQ-10,WARNING,HINDUNILVR,Dividend payout > 100
+DQ-10,WARNING,ITC,Dividend payout > 100
+DQ-10,WARNING,M&M,Dividend payout > 100
+DQ-10,WARNING,NAUKRI,Dividend payout > 100
+DQ-10,WARNING,NESTLEIND,Dividend payout > 100
+DQ-10,WARNING,SBIN,Dividend payout > 100
+DQ-10,WARNING,TATAPOWER,Dividend payout > 100
+DQ-10,WARNING,TECHM,Dividend payout > 100
+DQ-10,WARNING,TORNTPHARM,Dividend payout > 100
+DQ-10,WARNING,VEDL,Dividend payout > 100
+DQ-10,WARNING,VEDL,Dividend payout > 100
+DQ-10,WARNING,INDIGO,Dividend payout > 100
+DQ-11,WARNING,JIOFIN,Missing EPS
+DQ-11,WARNING,LICI,Missing EPS
+DQ-11,WARNING,LICI,Missing EPS
+DQ-11,WARNING,LICI,Missing EPS
+DQ-11,WARNING,SIEMENS,Missing EPS
