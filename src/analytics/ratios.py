@@ -131,3 +131,116 @@ def roce_rating(
             return "GOOD"
         else:
             return "LOW"
+        
+from typing import Optional
+
+
+def debt_to_equity(
+    borrowings: float,
+    equity_capital: float,
+    reserves: float
+) -> Optional[float]:
+    """
+    Debt to Equity Ratio
+
+    Return 0 if company is debt free.
+    """
+
+    if borrowings == 0:
+        return 0
+
+    equity = equity_capital + reserves
+
+    if equity <= 0:
+        return None
+
+    return round(
+        borrowings / equity,
+        2
+    )
+
+
+def high_leverage_flag(
+    debt_equity: Optional[float],
+    broad_sector: str
+) -> bool:
+    """
+    Flag high leverage for non-financial companies.
+    """
+
+    if debt_equity is None:
+        return False
+
+    if broad_sector == "Financials":
+        return False
+
+    return debt_equity > 5
+
+
+def interest_coverage_ratio(
+    operating_profit: float,
+    other_income: float,
+    interest: float
+) -> Optional[float]:
+    """
+    Interest Coverage Ratio
+    """
+
+    if interest == 0:
+        return None
+
+    return round(
+        (operating_profit + other_income) / interest,
+        2
+    )
+
+
+def icr_label(
+    interest: float
+) -> Optional[str]:
+    """
+    Label debt-free companies.
+    """
+
+    if interest == 0:
+        return "Debt Free"
+
+    return None
+
+
+def icr_warning_flag(
+    icr: Optional[float]
+) -> bool:
+
+    if icr is None:
+        return False
+
+    return icr < 1.5
+
+
+def net_debt(
+    borrowings: float,
+    investments: float
+) -> float:
+    """
+    Net Debt
+    """
+
+    return round(
+        borrowings - investments,
+        2
+    )
+
+
+def asset_turnover(
+    sales: float,
+    total_assets: float
+) -> Optional[float]:
+
+    if total_assets == 0:
+        return None
+
+    return round(
+        sales / total_assets,
+        2
+    )
