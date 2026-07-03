@@ -4,6 +4,7 @@ from src.analytics.ratios import (
     net_profit_margin,
     operating_profit_margin,
     return_on_equity,
+    return_on_capital_employed,
     debt_to_equity,
     interest_coverage_ratio,
     asset_turnover
@@ -81,6 +82,21 @@ df["return_on_equity_pct"] = df.apply(
     ),
     axis=1
 )
+
+df["return_on_capital_employed_pct"] = df.apply(
+    lambda x:
+    return_on_capital_employed(
+        x.operating_profit
+        +
+        x.other_income,
+        x.equity_capital,
+        x.reserves,
+        x.borrowings
+    ),
+    axis=1
+)
+
+from src.analytics.ratios import return_on_capital_employed
 
 df["debt_to_equity"] = df.apply(
     lambda x:
@@ -232,7 +248,8 @@ final = df[
 "revenue_cagr_5yr",
 "pat_cagr_5yr",
 "eps_cagr_5yr",
-"composite_quality_score"
+"composite_quality_score",
+"return_on_capital_employed_pct"
 ]
 ]
 
