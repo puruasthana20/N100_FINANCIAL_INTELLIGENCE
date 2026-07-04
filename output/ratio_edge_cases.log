@@ -114,3 +114,9 @@ TORNTPHARM | ROE | Source=24.2 | Computed=49.6 | Difference=25.4 | Category=Vers
 TORNTPHARM | ROCE | Source=23.2 | Computed=47.3 | Difference=24.1 | Category=Formula Discrepancy
 TRENT | ROE | Source=27.2 | Computed=36.31 | Difference=9.11 | Category=Version Difference
 TRENT | ROCE | Source=23.8 | Computed=50.85 | Difference=27.05 | Category=Formula Discrepancy
+
+
+===== DAY 14 EXTREME ROE REVIEW =====
+BEL | ROE | Source=26.3 | Computed=4744.05 | Category=Data Source Issue | Explanation=Extreme ROE caused by unusually small reported equity denominator relative to net profit. Requires source balance-sheet unit review.
+HAL | ROE | Source=28.9 | Computed=3816.58 | Category=Data Source Issue | Explanation=Extreme ROE caused by unusually small reported equity denominator relative to net profit. Requires source balance-sheet unit review.
+INDIGO | ROE | Source=nan | Computed=892.57 | Category=Data Source Issue | Explanation=Extreme ROE caused by unusually small reported equity denominator relative to net profit. Requires source balance-sheet unit review.
