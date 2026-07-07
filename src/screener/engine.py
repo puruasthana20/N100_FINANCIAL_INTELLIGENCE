@@ -114,7 +114,8 @@ def load_screener_data(
             company_id,
             year,
             sales,
-            net_profit
+            net_profit,
+            dividend_payout
         FROM profitandloss
         """,
         conn
@@ -145,9 +146,36 @@ def load_screener_data(
     )
 
 
+    # --------------------------------------------------------
+    # Dividend payout fallback
+    # --------------------------------------------------------
+    #
+    # financial_ratios already contains
+    # dividend_payout_ratio_pct.
+    #
+    # If it is missing for any reason, use the source
+    # profitandloss dividend_payout field.
+
+    if (
+        "dividend_payout_ratio_pct"
+        not in df.columns
+        and
+        "dividend_payout" in df.columns
+    ):
+
+        df[
+            "dividend_payout_ratio_pct"
+        ] = df[
+            "dividend_payout"
+        ]
+
+
+    # --------------------------------------------------------
     # Market cap year may be INTEGER while ratio year may
     # contain values such as "Mar 2024".
-    # First merge latest available market data per company.
+    #
+    # Use latest available market valuation per company.
+    # --------------------------------------------------------
 
     if not market_cap.empty:
 
@@ -179,21 +207,45 @@ def load_screener_data(
     # ========================================================
 
     numeric_columns = [
+
         "return_on_equity_pct",
+
+        "return_on_capital_employed_pct",
+
         "debt_to_equity",
+
         "free_cash_flow_cr",
+
+        "revenue_cagr_3yr",
+
         "revenue_cagr_5yr",
+
         "pat_cagr_5yr",
+
         "operating_profit_margin_pct",
+
+        "net_profit_margin_pct",
+
         "pe_ratio",
+
         "pb_ratio",
+
         "dividend_yield_pct",
+
+        "dividend_payout_ratio_pct",
+
         "interest_coverage",
+
         "market_cap_crore",
+
         "net_profit",
+
         "eps_cagr_5yr",
+
         "asset_turnover",
+
         "sales",
+
         "composite_quality_score"
     ]
 
@@ -238,9 +290,13 @@ def get_latest_annual_records(df):
 
 
     month_map = {
+
         "Mar": 3,
+
         "Jun": 6,
+
         "Sep": 9,
+
         "Dec": 12
     }
 
@@ -270,7 +326,9 @@ def get_latest_annual_records(df):
             as_index=False
         )
         .tail(1)
-        .reset_index(drop=True)
+        .reset_index(
+            drop=True
+        )
     )
 
 
@@ -307,21 +365,27 @@ def apply_single_filter(
     if operator == "min":
 
         return df[
-            df[column] >= threshold
+            df[column]
+            >=
+            threshold
         ]
 
 
     if operator == "max":
 
         return df[
-            df[column] <= threshold
+            df[column]
+            <=
+            threshold
         ]
 
 
     if operator == "equal":
 
         return df[
-            df[column] == threshold
+            df[column]
+            ==
+            threshold
         ]
 
 
@@ -352,7 +416,8 @@ def apply_de_filter(
 
     de_pass = (
         df["debt_to_equity"]
-        <= threshold
+        <=
+        threshold
     )
 
 
@@ -375,16 +440,18 @@ def apply_icr_filter(
 
     icr_pass = (
         df["interest_coverage"]
-        >= threshold
+        >=
+        threshold
     )
 
 
-    # Sprint 2 engine represents debt-free companies
-    # using zero debt. Their ICR may be null.
+    # Sprint 2 represents debt-free companies
+    # using D/E = 0 and potentially NULL ICR.
 
     debt_free = (
         df["debt_to_equity"]
-        == 0
+        ==
+        0
     )
 
 
@@ -421,6 +488,7 @@ def apply_filters(
     for filter_name, threshold in filters.items():
 
         if threshold is None:
+
             continue
 
 
@@ -439,6 +507,7 @@ def apply_filters(
         column = rule[
             "column"
         ]
+
 
         operator = rule[
             "operator"
@@ -523,6 +592,7 @@ def run_screener(
 
     config = load_config()
 
+
     df = load_screener_data()
 
 
@@ -544,7 +614,7 @@ def run_screener(
 
 
 # ============================================================
-# RUN PRESET
+# RUN STANDARD PRESET
 # ============================================================
 
 def run_preset(
@@ -574,6 +644,19 @@ def run_preset(
     ]
 
 
+    # Turnaround Watch requires historical D/E comparison.
+    # It is handled by src/screener/presets.py rather than
+    # this generic latest-row preset runner.
+
+    if preset_name == "turnaround_watch":
+
+        raise ValueError(
+            "turnaround_watch requires historical "
+            "trend analysis. Use "
+            "src.screener.presets.run_preset()"
+        )
+
+
     return run_screener(
         filters=filters,
         latest_only=latest_only
@@ -600,18 +683,27 @@ if __name__ == "__main__":
 
 
     display_columns = [
+
         "company_id",
+
         "year",
+
         "broad_sector",
+
         "return_on_equity_pct",
+
         "debt_to_equity",
+
         "composite_quality_score"
     ]
 
 
     display_columns = [
+
         column
+
         for column in display_columns
+
         if column in result.columns
     ]
 

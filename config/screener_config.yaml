@@ -61,6 +61,18 @@ metrics:
   sales_min:
     column: sales
     operator: min
+  
+  dividend_payout_max:
+    column: dividend_payout_ratio_pct
+    operator: max
+
+  debt_to_equity_equal:
+    column: debt_to_equity
+    operator: equal
+
+  revenue_cagr_3yr_min:
+    column: revenue_cagr_3yr
+    operator: min
 
 
 presets:
@@ -84,11 +96,15 @@ presets:
 
   dividend_champion:
     dividend_yield_min: 2
+    dividend_payout_max: 80
     fcf_min: 0
 
   debt_free_blue_chip:
+    debt_to_equity_equal: 0
     roe_min: 12
     sales_min: 5000
 
   turnaround_watch:
+    revenue_cagr_3yr_min: 10
     fcf_min: 0
+    de_declining: true
