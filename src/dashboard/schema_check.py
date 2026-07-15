@@ -3,13 +3,16 @@ import pandas as pd
 
 conn = sqlite3.connect("data/db/nifty100.db")
 
-print("\n===== PROFIT & LOSS =====")
-print(pd.read_sql("PRAGMA table_info(profitandloss)", conn)[["name","type"]])
+print("\n===== PEER_PERCENTILES =====")
+print(pd.read_sql(
+    "PRAGMA table_info(peer_percentiles)",
+    conn
+)[["name","type"]])
 
-print("\n===== BALANCE SHEET =====")
-print(pd.read_sql("PRAGMA table_info(balancesheet)", conn)[["name","type"]])
-
-print("\n===== CASHFLOW =====")
-print(pd.read_sql("PRAGMA table_info(cashflow)", conn)[["name","type"]])
+print("\n===== SAMPLE =====")
+print(pd.read_sql(
+    "SELECT * FROM peer_percentiles LIMIT 20",
+    conn
+))
 
 conn.close()
