@@ -78,3 +78,15 @@ def latest_ratios():
 @st.cache_data(ttl=600)
 def latest_market_data():
     return _read_sql("SELECT * FROM market_cap WHERE year=(SELECT MAX(year) FROM market_cap)")
+
+
+@st.cache_data(ttl=600)
+def get_pros_cons(ticker):
+    return _read_sql(
+        """
+        SELECT *
+        FROM prosandcons
+        WHERE company_id=?
+        """,
+        [ticker]
+    )
